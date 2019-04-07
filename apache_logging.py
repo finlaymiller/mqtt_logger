@@ -4,7 +4,6 @@
 #
 # Searches default Apache 2.4 access and error log folder, extracts all access logs, and formats them nicely
 # To be used with the rest of my MQTT logging scripts.
-
 import gzip
 import re
 from pathlib import Path
@@ -98,7 +97,6 @@ def get_ap_data(input_filename, filepath):
 	Gets all apache access logs in a directory and prints them to a JSON file.
 	:return: None.
 	"""
-
 	log_lines = get_lines(input_filename, filepath)
 	log_list = line_to_log(log_lines)
 
