@@ -92,13 +92,13 @@ def get_nwk():
 
 def get_tmp():
 	"""
-	Get temperature data using psutil
+	Get temperature data using psutil. Psutil returns too many unused fields so we only require the third field.
 
 	:return: One dict
 	"""
 	temp_attribs = 'temperature'
 
-	temp = psu.sensors_temperatures()
+	temp = psu.sensors_temperatures()[2]
 	dict_temp = {temp_attribs: temp}
 
 	return dict_temp
